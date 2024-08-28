@@ -50,6 +50,7 @@ exports.login = async(req, res, next) => {
         if (!compareSync(password, user.password)) throw new Unauthenticationerror.Unauthorized;
 
         const payload = {
+            id: user.id,
             name: user.name,
             email: user.email,
             role: user.role,
